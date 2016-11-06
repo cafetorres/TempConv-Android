@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:hint="@string/main.hint.in"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/txtTempIn" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTempIn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/spinnerIn"
+        android:entries="@array/Temp_arrays"
+        android:prompt="@string/Temp_prompt" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerOut"
+        android:layout_alignTop="@+id/spinnerIn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:entries="@array/Temp_arrays"
+        android:prompt="@string/Temp_prompt"/>
+
+    <EditText
+        android:hint="@string/main.hint.out"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinnerIn"
+        android:layout_toEndOf="@+id/spinnerIn"
+        android:layout_marginTop="29dp"
+        android:id="@+id/txtTempOut"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toRightOf="@+id/spinnerIn" />
+
+    <TextView
+        android:text="To"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtTempOut"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView3" />
+</RelativeLayout>
