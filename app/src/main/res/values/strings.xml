@@ -3,6 +3,8 @@
     <string name="Temp_prompt">Select</string>
     <string name="main.hint.out">Temperature 2</string>
     <string name="main.hint.in">Temperature 1</string>
+    <string name="main.button.submit">Calcular</string>
+    <string name="global_message_temp">%,.1f</string>
     <string-array name="Temp_arrays">
     <item>Celsius</item>
     <item>Fahrenheit</item>

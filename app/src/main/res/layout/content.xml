@@ -53,4 +53,16 @@
         android:layout_above="@+id/txtTempOut"
         android:layout_centerHorizontal="true"
         android:id="@+id/textView3" />
+
+    <Button
+        android:text="@string/main.button.submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtTempOut"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/button" />
 </RelativeLayout>
