@@ -10,11 +10,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.util.Date;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.cafetorres.tempconvandriod.R;
 import me.cafetorres.tempconvandriod.models.Temperature;
+import me.cafetorres.tempconvandriod.utils.Converter;
 
 public class MainActivity extends AppCompatActivity {
     @Bind(R.id.txtTempIn)
@@ -42,17 +45,26 @@ public class MainActivity extends AppCompatActivity {
 
         String strTemp= txtTempIn.getText().toString().trim();
 
+        Converter converter=new Converter();
+
+
+
         if(!strTemp.isEmpty()) {
             double temperatureIn =Double.parseDouble(strTemp);
+            String text=spinnerIn.getSelectedItem().toString();
+            converter.setTemperature(temperatureIn);
+            converter.setSpinnerIn(spinnerIn.getSelectedItem().toString());
+            converter.setSpineerOut(spinnerOut.getSelectedItem().toString());
 
             Temperature temperature=new Temperature();
-            temperature.setTemp(temperatureIn);
+            temperature.setTemp(converter.getTemperature());
+            temperature.setTimestamp(new Date());
 
-            if(spinnerIn.getSelectedItemPosition()==spinnerOut.getSelectedItemPosition()){
+
             String strTemp1= String.format(getString(R.string.global_message_temp),temperature.getTemp());
 
             txtTempOut.setVisibility(View.VISIBLE);
-            txtTempOut.setText(strTemp1);}
+            txtTempOut.setText(strTemp1);
 
         }
         

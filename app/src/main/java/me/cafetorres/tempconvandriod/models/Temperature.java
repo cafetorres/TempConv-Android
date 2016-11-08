@@ -21,7 +21,7 @@ public class Temperature {
     public void setTemp(double temp) {
         Temp = temp;
     }
-    
+
     public Date getTimestamp() {
         return timestamp;
     }
