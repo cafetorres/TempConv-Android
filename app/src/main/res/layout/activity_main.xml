@@ -22,5 +22,5 @@
         android:layout_below="@id/tempContent"
         android:id="@+id/fragmentList"
         android:name="me.cafetorres.tempconvandriod.fragments.TempHistoryListFragment"
-
+        tools:layout="@layout/frame_temp_history_list" />
 </RelativeLayout>
