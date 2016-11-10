@@ -13,7 +13,14 @@
     <include
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tipContent"
+        android:id="@+id/tempContent"
         layout="@layout/content" />
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tempContent"
+        android:id="@+id/fragmentList"
+        android:name="me.cafetorres.tempconvandriod.fragments.TempHistoryListFragment"
 
 </RelativeLayout>
