@@ -16,6 +16,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.cafetorres.tempconvandriod.R;
+import me.cafetorres.tempconvandriod.fragments.TempHistoryListFragment;
+import me.cafetorres.tempconvandriod.fragments.TempHistoryListFragmentListener;
 import me.cafetorres.tempconvandriod.models.Temperature;
 import me.cafetorres.tempconvandriod.utils.Converter;
 
@@ -31,12 +33,24 @@ public class MainActivity extends AppCompatActivity {
     @Bind(R.id.button)
     Button button;
 
-
+    private TempHistoryListFragmentListener fragmentListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        TempHistoryListFragment fragment=(TempHistoryListFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentList);
+    fragment.setRetainInstance(true);
+        fragmentListener= (TempHistoryListFragment)getSupportFragmentManager().findFragmentById(R.id.fragmentList);
+    }
+
+    
+
+
+
+
+    private void about() {
     }
 
     @OnClick(R.id.button)
