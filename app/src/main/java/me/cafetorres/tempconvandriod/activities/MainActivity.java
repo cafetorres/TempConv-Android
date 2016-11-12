@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentListener= (TempHistoryListFragment)getSupportFragmentManager().findFragmentById(R.id.fragmentList);
     }
 
-    
+
 
 
 
@@ -71,12 +71,15 @@ public class MainActivity extends AppCompatActivity {
             converter.setSpineerOut(spinnerOut.getSelectedItem().toString());
 
             Temperature temperature=new Temperature();
-            temperature.setTempIn(converter.getTemperature());
-            temperature.setTempOut(temperatureIn);
+            temperature.setTempIn(temperatureIn);
+            temperature.setTempOut(converter.getTemperature());
             temperature.setTimestamp(new Date());
+            temperature.setSpinnerIn(spinnerIn.getSelectedItem().toString());
+            temperature.setSpineerOut(spinnerOut.getSelectedItem().toString());
 
 
             String strTemp1= String.format(getString(R.string.global_message_temp),temperature.getTempOut());
+            fragmentListener.addToList(temperature);
 
             txtTempOut.setVisibility(View.VISIBLE);
             txtTempOut.setText(strTemp1);

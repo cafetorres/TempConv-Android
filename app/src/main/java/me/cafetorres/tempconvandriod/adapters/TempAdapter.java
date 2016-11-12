@@ -48,7 +48,7 @@ public class TempAdapter extends RecyclerView.Adapter<TempAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(TempAdapter.ViewHolder holder, int position) {
         Temperature element = dataset.get(position);
-        String strTip = String.format(context.getString(R.string.global_message_temp), element.getTempOut());
+        String strTip = element.showTemp();
         holder.txtContent.setText(strTip);
         holder.setOnItemClickListener(element, onItemClickListener);
     }

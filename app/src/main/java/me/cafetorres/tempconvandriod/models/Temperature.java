@@ -11,6 +11,24 @@ public class Temperature {
     private double TempIn;
     private double TempOut;
     private Date timestamp;
+    String spinnerIn;
+    String spineerOut;
+
+    public String getSpinnerIn() {
+        return spinnerIn;
+    }
+
+    public void setSpinnerIn(String spinnerIn) {
+        this.spinnerIn = spinnerIn;
+    }
+
+    public String getSpineerOut() {
+        return spineerOut;
+    }
+
+    public void setSpineerOut(String spineerOut) {
+        this.spineerOut = spineerOut;
+    }
 
 
     public double getTempIn() {
@@ -42,5 +60,12 @@ public class Temperature {
 
     public void setTempOut(double tempOut) {
         TempOut = tempOut;
+    }
+    public String showTemp()
+    {
+        String sI=spinnerIn.substring(0,1);
+        String sO=spineerOut.substring(0,1);
+        String temp= String.format("%,.1f °%s >> %,.1f °%s",TempIn,sI, TempOut,sO);
+        return temp;
     }
 }
