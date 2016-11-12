@@ -8,18 +8,19 @@ import java.util.Date;
  */
 
 public class Temperature {
-    private double Temp;
+    private double TempIn;
+    private double TempOut;
     private Date timestamp;
 
 
-    public double getTemp() {
-        return Temp;
+    public double getTempIn() {
+        return TempIn;
     }
 
 
 
-    public void setTemp(double temp) {
-        Temp = temp;
+    public void setTempIn(double temp) {
+        TempIn = temp;
     }
 
     public Date getTimestamp() {
@@ -33,5 +34,13 @@ public class Temperature {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM dd, yyyy HH:mm");
 
         return simpleDateFormat.format(timestamp);
+    }
+
+    public double getTempOut() {
+        return TempOut;
+    }
+
+    public void setTempOut(double tempOut) {
+        TempOut = tempOut;
     }
 }

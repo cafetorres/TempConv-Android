@@ -57,11 +57,12 @@ public class MainActivity extends AppCompatActivity {
             converter.setSpineerOut(spinnerOut.getSelectedItem().toString());
 
             Temperature temperature=new Temperature();
-            temperature.setTemp(converter.getTemperature());
+            temperature.setTempIn(converter.getTemperature());
+            temperature.setTempOut(temperatureIn);
             temperature.setTimestamp(new Date());
 
 
-            String strTemp1= String.format(getString(R.string.global_message_temp),temperature.getTemp());
+            String strTemp1= String.format(getString(R.string.global_message_temp),temperature.getTempOut());
 
             txtTempOut.setVisibility(View.VISIBLE);
             txtTempOut.setText(strTemp1);
