@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import me.cafetorres.tempconvandriod.R;
+import me.cafetorres.tempconvandriod.activities.Temp_Detail;
 import me.cafetorres.tempconvandriod.adapters.OnItemClickListener;
 import me.cafetorres.tempconvandriod.adapters.TempAdapter;
 import me.cafetorres.tempconvandriod.models.Temperature;
@@ -55,8 +56,8 @@ public class TempHistoryListFragment extends Fragment implements TempHistoryList
 
     @Override
     public void onItemClick(Temperature temperature) {
-        Intent intent = new Intent(getActivity(), Temperature.class);
-        intent.putExtra("Temperature", temperature.getTempOut());
+        Intent intent = new Intent(getActivity(), Temp_Detail.class);
+        intent.putExtra("Temperature", temperature.showTemp());
         intent.putExtra("Date", temperature.getDateFormated());
 
         startActivity(intent);
