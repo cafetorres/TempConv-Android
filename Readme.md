@@ -16,6 +16,10 @@ Practica 1
 
 # Temperature Converter
 
-![GitHub Logo](/img/1.png)
-Format: ![Alt Text](url)
+Video: [TempConvAndroid](https://youtu.be/joYYY_3qeJc)
+
+[Imagenes de la Aplicacion](/img)
+
+
+![1](/img/1.png)![Alt Text](url)
 
