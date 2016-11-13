@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     EditText txtTempOut;
     @Bind(R.id.button)
     Button button;
+    @Bind(R.id.btnClear)
+    Button btnClear;
 
     private TempHistoryListFragmentListener fragmentListener;
     @Override
@@ -46,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    @OnClick(R.id.btnClear)
+    public void handleClickClear() {
+        fragmentListener.clearList();
+    }
 
 
 

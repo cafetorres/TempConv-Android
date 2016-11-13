@@ -23,4 +23,15 @@
         android:id="@+id/fragmentList"
         android:name="me.cafetorres.tempconvandriod.fragments.TempHistoryListFragment"
         tools:layout="@layout/frame_temp_history_list" />
+
+    <Button
+        android:text="Clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fragmentList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="117dp"
+        android:layout_marginStart="117dp"
+        android:id="@+id/btnClear" />
 </RelativeLayout>
