@@ -1,14 +1,19 @@
 package me.cafetorres.tempconvandriod.activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -16,6 +21,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.cafetorres.tempconvandriod.R;
+import me.cafetorres.tempconvandriod.TempConvApp;
 import me.cafetorres.tempconvandriod.fragments.TempHistoryListFragment;
 import me.cafetorres.tempconvandriod.fragments.TempHistoryListFragmentListener;
 import me.cafetorres.tempconvandriod.models.Temperature;
@@ -50,13 +56,37 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnClear)
     public void handleClickClear() {
+        txtTempOut.setText("");
+        txtTempIn.setText("");
         fragmentListener.clearList();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_about:
+                Toast.makeText(this, "Elaborado por: CARLOS FERNANDO TORRES LUNA", Toast.LENGTH_SHORT).show();
+                return true;
+        }
+  return false;
+    }
 
     private void about() {
+        TempConvApp app = (TempConvApp) getApplication();
+        String strUrl = app.getAbout();
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(strUrl));
+        startActivity(intent);
     }
+
 
     @OnClick(R.id.button)
     public void handleSubmit(){

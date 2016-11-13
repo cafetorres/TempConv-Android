@@ -5,6 +5,7 @@
     <string name="main.hint.in">Temperature 1</string>
     <string name="main.button.submit">Calcular</string>
     <string name="global_message_temp">%,.1f</string>
+    <string name="main.menu.action.about">Acerca de</string>
     <string-array name="Temp_arrays">
     <item>Celsius</item>
     <item>Fahrenheit</item>
