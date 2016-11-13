@@ -1,8 +1,6 @@
 package me.cafetorres.tempconvandriod.activities;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,7 +19,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import me.cafetorres.tempconvandriod.R;
-import me.cafetorres.tempconvandriod.TempConvApp;
 import me.cafetorres.tempconvandriod.fragments.TempHistoryListFragment;
 import me.cafetorres.tempconvandriod.fragments.TempHistoryListFragmentListener;
 import me.cafetorres.tempconvandriod.models.Temperature;
@@ -78,14 +75,7 @@ public class MainActivity extends AppCompatActivity {
   return false;
     }
 
-    private void about() {
-        TempConvApp app = (TempConvApp) getApplication();
-        String strUrl = app.getAbout();
 
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(strUrl));
-        startActivity(intent);
-    }
 
 
     @OnClick(R.id.button)
